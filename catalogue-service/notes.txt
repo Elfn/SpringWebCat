@@ -1,0 +1,5 @@
+http://localhost:8080/products/search/byDescription?kw=Ord
+
+http://localhost:8080/products/search/byDescription?page=1&size=1
+
+http://localhost:8080/products?projection=P1
