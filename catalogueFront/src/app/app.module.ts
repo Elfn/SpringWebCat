@@ -2,15 +2,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { ProductComponent } from './components/product/product.component';
+import {RouterModule} from '@angular/router';
+import {AppRoutingModule} from './app-routing.module';
+import { NewProductComponent } from './components/new-product/new-product.component';
+import {HttpClientModule} from "@angular/common/http";
+import {ManageService} from "./services/manage.service";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProductComponent,
+    NewProductComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ManageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

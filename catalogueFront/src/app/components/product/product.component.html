@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">List of products</div>
+      <div class="panel-body">
+        <button class="btn btn-primary" (click)="onGetProducts()">Chercher</button>
+      </div>
+      <div class="panel-body" >
+        <table *ngIf="listProducts" class="table table-striped">
+         <thead>
+         <tr>
+           <th>ID</th><th>DESIGNATION</th><th>PRICE</th><th>QUANTITY</th>
+         </tr>
+         </thead>
+          <tbody>
+          <tr *ngFor="let p of listProducts">
+            <td>{{p.id}}</td>
+            <td>{{p.description}}</td>
+            <td>{{p.price | number:'0.00'}}</td>
+            <td>{{p.quantity}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+  </div>
+</div>
