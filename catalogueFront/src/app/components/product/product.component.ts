@@ -9,6 +9,11 @@ import {ManageService} from "../../services/manage.service";
 export class ProductComponent implements OnInit {
 
   public listProducts: any;
+  public size = 2;
+  public currentPage = 0;
+  public totalPages;
+  public pages:Array<number>;
+
 
   constructor(private service: ManageService) { }
 
@@ -16,7 +21,9 @@ export class ProductComponent implements OnInit {
   }
 
   onGetProducts() {
-    this.service.getProducts().subscribe(data =>{
+    this.service.getProducts(this.currentPage,this.size).subscribe(data =>{
+      this.totalPages = data["page"].totalPages;
+      this.pages = new Array<number>((this.totalPages));
       this.listProducts = data;
     },error => {
       console.log(error);
