@@ -13,11 +13,11 @@ public class ProductRestService {
     @Autowired
     private ProductRepo productRepo;
 
-    @GetMapping(value = "/productsList")
-    public List<Product> listProducts()
-    {
-        return productRepo.findAll();
-    }
+    //pping(value = "/productsList")
+    // List<Product> listProducts()
+    //
+    //turn productRepo.findAll();
+    //
 
     @GetMapping(value = "/productsList/{id}")
     public Product listProducts(@PathVariable(name = "id") Long id)
@@ -31,6 +31,7 @@ public class ProductRestService {
             p.setId(id);
             return productRepo.save(p);
         }
+
 
     @PostMapping(value = "/productsList")
     public Product save(@RequestBody Product p){

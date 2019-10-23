@@ -8,6 +8,7 @@ import {AppRoutingModule} from './app-routing.module';
 import { NewProductComponent } from './components/new-product/new-product.component';
 import {HttpClientModule} from "@angular/common/http";
 import {ManageService} from "./services/manage.service";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {ManageService} from "./services/manage.service";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [ManageService],
   bootstrap: [AppComponent]

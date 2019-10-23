@@ -13,4 +13,14 @@ export class ManageService {
     return this.http.get(this.host+"/products?page="+page+"&size="+size)
   }
 
+  getProductsByKw(kw: string, page: number, size:number)
+  {
+    return this.http.get(this.host+"/products/search/byDescriptionPage?kw="+kw+"&page="+page+"&size="+size)
+  }
+
+  deleteProduct(url)
+  {
+    return this.http.delete(url)
+  }
+
 }
